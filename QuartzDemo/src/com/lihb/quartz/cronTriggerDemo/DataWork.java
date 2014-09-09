@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class DataWork {
 	
-	/** 计划任务map */
+	/** 计划任务map存数据 */
 	private static Map<String, JobEntity> jobMap = new HashMap<String, JobEntity>();
 	 
 	static {
