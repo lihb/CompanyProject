@@ -48,7 +48,7 @@ public class MyThreadWrite implements Runnable {
 	@Override
 	public void run() {
 		
-		System.out.println(Thread.currentThread().getName()+"。。。。。开始执行。。。。。"+ new Date());
+		System.out.println(Thread.currentThread().getName()+"。。。。。开始执行。。。。。。"+ new Date());
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
