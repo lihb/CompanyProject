@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job-scheduling-data
+	xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData 
+	http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd"
+	version="2.0">
+ 
+	<schedule>
+		<job>
+			<name>ToRedis</name>
+			<group>GroupDummy</group>
+			<description>write data to redis</description>
+			<job-class>com.lihb.MyServices.JobThreadWrite</job-class>
+		</job>
+ 
+		<trigger>
+			<!-- <cron>
+				<name>dummyTriggerNameA</name>
+				<job-name>JobA</job-name>
+				<job-group>GroupDummy</job-group>
+				It will run every 30 seconds
+				<cron-expression>0/30 * * * * ?</cron-expression>
+			</cron> -->
+			<simple>  
+		       <name>toRedisTrigger</name>  
+		       <group>DEFAULT</group>  
+		       <job-name>ToRedis</job-name>  
+		       <job-group>GroupDummy</job-group>  
+		       <start-time>2014-09-09T15:28:00</start-time>  
+		  
+		       <!-- repeat indefinitely every 10 seconds -->  
+		      <!--  <repeat-count>0</repeat-count>  
+		       <repeat-interval>10000</repeat-interval>   -->
+		     </simple>  
+			
+		</trigger>
+	</schedule>
+	<!-- <schedule>
+		<job>
+			<name>FromRedis</name>
+			<group>GroupDummy</group>
+			<description>Read data from redis</description>
+			<job-class>com.lihb.MyServices.JobThreadRead</job-class>
+		</job>
+ 
+		<trigger>
+			<cron>
+				<name>dummyTriggerNameA</name>
+				<job-name>JobA</job-name>
+				<job-group>GroupDummy</job-group>
+				It will run every 30 seconds
+				<cron-expression>0/30 * * * * ?</cron-expression>
+			</cron>
+			<simple>  
+		       <name>fromRedisTrigger</name>  
+		       <group>DEFAULT</group>  
+		       <job-name>FromRedis</job-name>  
+		       <job-group>GroupDummy</job-group>  
+		       <start-time>2014-08-31T22:11:50</start-time>  
+		  
+		       repeat indefinitely every 5 seconds  
+		      <repeat-count>-1</repeat-count>  
+		       <repeat-interval>10000</repeat-interval>
+		     </simple>  
+			
+		</trigger>
+	</schedule> -->
+</job-scheduling-data>

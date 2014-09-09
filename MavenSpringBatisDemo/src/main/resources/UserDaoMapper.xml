@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.lihb.mapper.UserMapper">
+
+  <parameterMap type="com.lihb.domain.User" id="parameterMapUser">
+    <parameter property="id"/>
+    <parameter property="name"/>
+    <parameter property="email"/>
+    <parameter property="title"/>
+    <parameter property="time"/>
+  </parameterMap>
+  
+  <resultMap type="com.lihb.domain.User" id="resultMapUser">
+    <result property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="email" column="email"/>
+    <result property="title" column="title"/>
+    <result property="time" column="time"/>
+  </resultMap>
+  
+  <insert id="insertUser" parameterMap="parameterMapUser">
+    INSERT INTO user(id, name, email, title)
+    VALUES(?,?)
+  </insert>
+  <select id="countAll" resultType="int">
+        select count(*) c from user;
+  </select>
+  <select id="getAllUser"  resultMap="resultMapUser">
+    SELECT * FROM user
+  </select>
+  <select id="getById" parameterType="String" resultMap="resultMapUser">
+    SELECT * FROM user
+    WHERE id=#{value}
+  </select>
+  <select id="getByTime" parameterType="String" resultMap="resultMapUser">
+    SELECT * FROM user
+    WHERE time=#{value}
+  </select>
+  <select id="getUserByCondition" parameterType="java.util.Map" resultMap="resultMapUser">
+  	SELECT * FROM user
+  	WHERE time=#{time} AND id IN
+    <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+        #{item}
+    </foreach>
+  </select>
+  <delete id="deleteUser" parameterType="String">
+    DELETE FROM user 
+    WHERE id=#{value}
+  </delete>
+  <update id="updateUser" parameterType="java.util.Map">
+    UPDATE user
+    SET name=#{name}
+    WHERE id=#{id}
+  </update>
+</mapper>
