@@ -29,20 +29,20 @@ public class DataWork {
 		}*/
 		JobEntity job1 = new JobEntity();
 		job1.setJobId("10001");
-		job1.setJobName("liqixi_169@126.com");
+		job1.setJobName("xxxxxx@126.com");
 		job1.setJobGroup("dataWork");
 		job1.setJobStatus("1");
 		job1.setCronExpression("0 0/2 * * * ?");
-		job1.setDesc("·¢ËÍÓÊ¼þto274137944");
+		job1.setDesc("·¢ËÍÓÊ¼þ....");
 		addJob(job1);
 		
 		JobEntity job2 = new JobEntity();
 		job2.setJobId("10002");
-		job2.setJobName("523777698@qq.com");
+		job2.setJobName("5xxxxx@qq.com");
 		job2.setJobGroup("dataWork");
 		job2.setJobStatus("1");
 		job2.setCronExpression("0 0/4 * * * ?");
-		job2.setDesc("·¢ËÍÓÊ¼þto2523777698");
+		job2.setDesc("·¢ËÍÓÊ¼þ²âÊÔ.....");
 //		addJob(job2);
 		
 		
