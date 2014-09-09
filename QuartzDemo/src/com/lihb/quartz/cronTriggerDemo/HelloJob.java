@@ -35,12 +35,12 @@ public class HelloJob implements Job{
 		
 		
 		try {
-			String title="完成提醒模块";
+			String title="吃饭";
 			String start ="2014-05-25 08:30";
 			String end ="2014-05-25 10:30";
 			String repeat ="每天重复";
 			String note = "打电话给xxx";
-			String foot = "您在189邮箱日历中为这一事件设置了提醒，所以我们按时发出此封提醒邮件。";
+			String foot = "您在日历中为这一事件设置了提醒，所以我们按时发出此封提醒邮件。";
 			
 			StringBuilder sb = new StringBuilder("<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /><style type=\"text/css\">");
 			sb.append(".content {width:50%;margin-left:10px;clear:both;font-size:14px;color:#999;font-family:\"微软雅黑\"; border:1px #ddd solid;	box-shadow:#999 3px 3px 3px;padding:10px;}");
@@ -66,12 +66,12 @@ public class HelloJob implements Job{
 			
 			//SimpleEmail email = new SimpleEmail();
 			HtmlEmail email = new HtmlEmail();
-			email.setFrom("lihb@corp.21cn.com");
+			email.setFrom("xxxxxx");
 			email.setCharset("utf-8");
 			email.setSentDate(new Date());
 			email.setSubject("发送邮件测试。");
-			email.setHostName("smtp-ent.21cn.com");
-			email.setAuthentication("lihb@corp.21cn.com", "p@ssword123");
+			email.setHostName("smtp-ent.xxxxx.com");
+			email.setAuthentication("xxxxx", "xxxx");
 			email.setTo(list1);
 			email.setContent(sb.toString(),"text/html;charset=utf-8");
 			email.send();
